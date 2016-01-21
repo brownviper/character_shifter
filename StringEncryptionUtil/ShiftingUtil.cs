@@ -13,12 +13,16 @@ namespace StringEncryptionUtil
             {
                 char shifted;
 
-                if (c != ' ')
+                if (char.IsLetter(c))
                 {
                     if (c == 'z')
-                        shifted = 'a';
+                    {
+                        shifted = Convert.ToChar('a' + shift-1);
+                    }
                     else
-                    shifted = Convert.ToChar(c + shift);
+                    {
+                        shifted = Convert.ToChar(c + shift);
+                    }
                 }
                 else
                 {
