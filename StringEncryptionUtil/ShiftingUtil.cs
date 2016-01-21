@@ -21,10 +21,7 @@ namespace StringEncryptionUtil
                     }
                     else
                     {
-                        if(c == 'Z')
-                            shifted = Convert.ToChar('A' + shift - 1);
-                        else
-                            shifted = Convert.ToChar(c + shift);
+                        shifted = shiftUpperLetter(shift, c);
                     }
                 }
                 else
@@ -36,6 +33,17 @@ namespace StringEncryptionUtil
             }
 
             return sb.ToString();
+        }
+
+        private static char shiftUpperLetter(int shift, char c)
+        {
+            char shifted;
+            if (c == 'Z')
+                shifted = Convert.ToChar('A' + shift - 1);
+            else
+                shifted = Convert.ToChar(c + shift);
+
+            return shifted;
         }
 
         private static char shiftLowerLetter(char c, int shift)
