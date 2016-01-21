@@ -74,5 +74,11 @@ namespace charachter_shifter_tests
         {
             Assert.AreEqual("A B", shiftingUtil.encrypt("Y Z", 2));
         }
+
+        [Test]
+        public void encrypt_should_shift_more_that_one_small_letters_to_wrap()
+        {
+            Assert.AreEqual("b d", shiftingUtil.encrypt("x z", 4));
+        }
     }
 }

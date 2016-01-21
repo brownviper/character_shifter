@@ -47,10 +47,12 @@ namespace StringEncryptionUtil
 
         private static char shiftLowerLetter(char c, int shift)
         {
-            if (c == 'z')
-                return Convert.ToChar('a' + shift - 1);
+            var shifted = c + shift;
 
-            return Convert.ToChar(c + shift);
+            if (shifted > 'z')
+                return Convert.ToChar(shifted - 26);
+
+            return Convert.ToChar(shifted);
         }
     }
 }
