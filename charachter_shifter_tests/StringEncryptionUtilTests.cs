@@ -51,5 +51,10 @@ namespace charachter_shifter_tests
             Assert.AreEqual("b", shiftingUtil.encrypt("z", 2));
         }
 
+        [Test]
+        public void encrypt_should_shift_zs_by_two_shifts_to_bs()
+        {
+            Assert.AreEqual("b b", shiftingUtil.encrypt("z z", 2));
+        }
     }
 }
