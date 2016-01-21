@@ -7,7 +7,7 @@ namespace StringEncryptionUtil
     {
         public string encrypt(string input, int shift)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
 
             foreach (var c in input)
             {
@@ -17,39 +17,19 @@ namespace StringEncryptionUtil
                     continue;
                 }
 
-
-                char shifted;
-
-                if (char.IsLower(c))
-                {
-                    shifted = shiftLowerLetter(c, shift);
-                }
-                else
-                {
-                    shifted = shiftUpperLetter(c, shift);
-                }
-
-                sb.Append(shifted);
+                sb.Append(shiftLetter(c, shift));
             }
 
             return sb.ToString();
         }
 
-        private static char shiftUpperLetter(char c, int shift)
+        private static char shiftLetter(char c, int shift)
         {
             var shifted = c + shift;
 
-            if (shifted > 'Z')
-                return Convert.ToChar(shifted - 26);
-
-            return Convert.ToChar(shifted);
-        }
-
-        private static char shiftLowerLetter(char c, int shift)
-        {
-            var shifted = c + shift;
-
-            if (shifted > 'z')
+            if ((shifted > 'Z' && shifted < 'a')
+                               ||
+                           shifted > 'z')
                 return Convert.ToChar(shifted - 26);
 
             return Convert.ToChar(shifted);
