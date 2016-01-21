@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "character_shifter", "character_shifter\character_shifter.csproj", "{6A873BB0-6245-4877-8C2D-DDE7613C3BD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App", "character_shifter\App.csproj", "{6A873BB0-6245-4877-8C2D-DDE7613C3BD5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "charachter_shifter_tests", "charachter_shifter_tests\charachter_shifter_tests.csproj", "{AC9A22E7-F971-4EA5-8B4E-E188948507DE}"
 EndProject
