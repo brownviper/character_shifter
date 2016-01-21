@@ -7,10 +7,10 @@ namespace charachter_shifter_tests
     public class StringEncryptionUtilTests
     {
         [Test]
-        public void _Test()
+        public void encrypt_return_input_string()
         {
             var shiftingUtil = new ShiftingUtil();
-            Assert.NotNull(shiftingUtil);
+            Assert.AreEqual(shiftingUtil.encrypt(), "");
         }
     }
 }
