@@ -18,25 +18,31 @@ namespace charachter_shifter_tests
         [Test]
         public void encrypt_return_input_string()
         {
-            Assert.AreEqual(shiftingUtil.encrypt("a", 0), "a");
+            Assert.AreEqual("a", shiftingUtil.encrypt("a", 0));
         }
 
         [Test]
         public void encrypt_will_return_shifted_input_string_by_shift_key()
         {
-            Assert.AreEqual(shiftingUtil.encrypt("a", 1), "b");
+            Assert.AreEqual("b", shiftingUtil.encrypt("a", 1));
         }
 
         [Test]
         public void when_input_is_capital_output_is_also_capital()
         {
-            Assert.AreEqual(shiftingUtil.encrypt("A", 1), "B");
+            Assert.AreEqual("B", shiftingUtil.encrypt("A", 1));
         }
 
         [Test]
         public void encryptio_perserve_whitespaces()
         {
-            Assert.AreEqual(shiftingUtil.encrypt("A B", 1), "B C");
+            Assert.AreEqual("B C", shiftingUtil.encrypt("A B", 1));
+        }
+
+        [Test]
+        public void when_input_z_output_should_wrap_to_a()
+        {
+            Assert.AreEqual("a", shiftingUtil.encrypt("z", 1));
         }
 
     }

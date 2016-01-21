@@ -15,6 +15,9 @@ namespace StringEncryptionUtil
 
                 if (c != ' ')
                 {
+                    if (c == 'z')
+                        shifted = 'a';
+                    else
                     shifted = Convert.ToChar(c + shift);
                 }
                 else
