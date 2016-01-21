@@ -56,5 +56,12 @@ namespace charachter_shifter_tests
         {
             Assert.AreEqual("b b", shiftingUtil.encrypt("z z", 2));
         }
+
+        [Test]
+        public void when_input_Z_output_should_wrap_to_A()
+        {
+            Assert.AreEqual("A", shiftingUtil.encrypt("Z", 1));
+        }
+
     }
 }

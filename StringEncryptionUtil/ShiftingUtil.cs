@@ -21,7 +21,10 @@ namespace StringEncryptionUtil
                     }
                     else
                     {
-                        shifted = Convert.ToChar(c + shift);
+                        if(c == 'Z')
+                            shifted = Convert.ToChar('A' + shift - 1);
+                        else
+                            shifted = Convert.ToChar(c + shift);
                     }
                 }
                 else
