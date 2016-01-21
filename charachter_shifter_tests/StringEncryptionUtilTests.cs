@@ -26,6 +26,12 @@ namespace charachter_shifter_tests
         {
             Assert.AreEqual(shiftingUtil.encrypt("a", 1), "b");
         }
-    
+
+        [Test]
+        public void when_input_is_capital_output_is_also_capital()
+        {
+            Assert.AreEqual(shiftingUtil.encrypt("A", 1), "B");
+        }
+
     }
 }
