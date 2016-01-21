@@ -11,7 +11,17 @@ namespace StringEncryptionUtil
 
             foreach (var c in input)
             {
-                var shifted = Convert.ToChar(c+shift);
+                char shifted;
+
+                if (c != ' ')
+                {
+                    shifted = Convert.ToChar(c + shift);
+                }
+                else
+                {
+                    shifted = Convert.ToChar(c);
+                }
+
                 sb.Append(shifted);
             }
 

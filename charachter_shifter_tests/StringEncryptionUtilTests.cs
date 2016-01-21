@@ -33,5 +33,11 @@ namespace charachter_shifter_tests
             Assert.AreEqual(shiftingUtil.encrypt("A", 1), "B");
         }
 
+        [Test]
+        public void encryptio_perserve_whitespaces()
+        {
+            Assert.AreEqual(shiftingUtil.encrypt("A B", 1), "B C");
+        }
+
     }
 }
