@@ -15,9 +15,9 @@ namespace StringEncryptionUtil
 
                 if (char.IsLetter(c))
                 {
-                    if (c == 'z')
+                    if (char.IsLower(c))
                     {
-                        shifted = shiftLowerLetter(shift);
+                        shifted = shiftLowerLetter(c, shift);
                     }
                     else
                     {
@@ -35,9 +35,12 @@ namespace StringEncryptionUtil
             return sb.ToString();
         }
 
-        private static char shiftLowerLetter(int shift)
+        private static char shiftLowerLetter(char c, int shift)
         {
-            return Convert.ToChar('a' + shift - 1);
+            if (c == 'z')
+                return Convert.ToChar('a' + shift - 1);
+
+            return Convert.ToChar(c + shift);
         }
     }
 }
