@@ -37,10 +37,12 @@ namespace StringEncryptionUtil
 
         private static char shiftUpperLetter(char c, int shift)
         {
-            if (c == 'Z')
-                return Convert.ToChar('A' + shift - 1);
+            var shifted = c + shift;
 
-            return Convert.ToChar(c + shift);
+            if (shifted > 'Z')
+                return Convert.ToChar(shifted - 26);
+
+            return Convert.ToChar(shifted);
         }
 
         private static char shiftLowerLetter(char c, int shift)
