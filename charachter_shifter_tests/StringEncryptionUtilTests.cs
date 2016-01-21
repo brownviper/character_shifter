@@ -86,5 +86,11 @@ namespace charachter_shifter_tests
         {
             Assert.AreEqual("b !", shiftingUtil.encrypt("x !", 4));
         }
+
+        [Test]
+        public void encrypt_should_return_Hello_World()
+        {
+            Assert.AreEqual("Hello world!", shiftingUtil.encrypt("Zwddg ogjdv!", 8));
+        }
     }
 }

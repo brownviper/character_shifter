@@ -27,10 +27,10 @@ namespace StringEncryptionUtil
         {
             var shifted = c + shift;
 
-            if ((shifted > 'Z' && shifted < 'a')
+            if (char.IsUpper(c) && shifted > 'Z' 
                                ||
-                           shifted > 'z')
-                return Convert.ToChar(shifted - 26);
+                char.IsLower(c) && shifted > 'z')
+                    return Convert.ToChar(shifted - 26);
 
             return Convert.ToChar(shifted);
         }
