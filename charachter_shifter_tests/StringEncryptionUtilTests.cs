@@ -80,5 +80,11 @@ namespace charachter_shifter_tests
         {
             Assert.AreEqual("b d", shiftingUtil.encrypt("x z", 4));
         }
+
+        [Test]
+        public void encrypt_should_not_shift_symbols()
+        {
+            Assert.AreEqual("b !", shiftingUtil.encrypt("x !", 4));
+        }
     }
 }

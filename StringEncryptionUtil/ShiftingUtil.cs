@@ -11,7 +11,7 @@ namespace StringEncryptionUtil
 
             foreach (var c in input)
             {
-                if (char.IsSymbol(c) || char.IsWhiteSpace(c))
+                if (!char.IsLetter(c))
                 {
                     sb.Append(c);
                     continue;
