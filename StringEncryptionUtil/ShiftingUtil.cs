@@ -2,9 +2,9 @@ namespace StringEncryptionUtil
 {
     public class ShiftingUtil
     {
-        public string encrypt()
+        public string encrypt(string input)
         {
-            return "";
+            return input;
         }
     }
 }

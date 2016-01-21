@@ -10,7 +10,7 @@ namespace charachter_shifter_tests
         public void encrypt_return_input_string()
         {
             var shiftingUtil = new ShiftingUtil();
-            Assert.AreEqual(shiftingUtil.encrypt(), "");
+            Assert.AreEqual(shiftingUtil.encrypt("a"), "a");
         }
     }
 }
