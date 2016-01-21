@@ -11,22 +11,22 @@ namespace StringEncryptionUtil
 
             foreach (var c in input)
             {
+                if (char.IsSymbol(c) || char.IsWhiteSpace(c))
+                {
+                    sb.Append(c);
+                    continue;
+                }
+
+
                 char shifted;
 
-                if (char.IsLetter(c))
+                if (char.IsLower(c))
                 {
-                    if (char.IsLower(c))
-                    {
-                        shifted = shiftLowerLetter(c, shift);
-                    }
-                    else
-                    {
-                        shifted = shiftUpperLetter(shift, c);
-                    }
+                    shifted = shiftLowerLetter(c, shift);
                 }
                 else
                 {
-                    shifted = Convert.ToChar(c);
+                    shifted = shiftUpperLetter(c, shift);
                 }
 
                 sb.Append(shifted);
@@ -35,15 +35,12 @@ namespace StringEncryptionUtil
             return sb.ToString();
         }
 
-        private static char shiftUpperLetter(int shift, char c)
+        private static char shiftUpperLetter(char c, int shift)
         {
-            char shifted;
             if (c == 'Z')
-                shifted = Convert.ToChar('A' + shift - 1);
-            else
-                shifted = Convert.ToChar(c + shift);
+                return Convert.ToChar('A' + shift - 1);
 
-            return shifted;
+            return Convert.ToChar(c + shift);
         }
 
         private static char shiftLowerLetter(char c, int shift)
